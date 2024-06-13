@@ -1,0 +1,16 @@
+@startuml
+participant "Google Sheet" as sheet
+participant "Google Apps Script" as script
+participant "Google Calendar" as calendar
+
+note "Setup"
+sheet -> script: Read data from sheet
+script -> calendar: Create events from data
+end note
+
+script -> sheet: Get data range
+sheet -> script: Return data range
+script -> calendar: Create event
+calendar -> script: Event created
+script -> script: Loop through data
+@enduml

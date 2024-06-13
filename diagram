@@ -1,0 +1,15 @@
+@startuml
+participant "Google Sheets" as GS
+participant "Google Apps Script" as GAS
+participant "Google Calendar" as GC
+
+GS -> GAS: Get data range
+GAS -> GS: Get data values
+GAS -> GC: Create event
+GC -> GAS: Event created
+GAS -> GS: Return result
+GS -> GAS: Get result
+GAS -> GC: Create event
+GC -> GAS: Event created
+GAS -> GS: Return result
+@enduml
